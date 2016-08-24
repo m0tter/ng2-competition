@@ -1,0 +1,9 @@
+<h2>Competitions</h2>
+<ul class="comps">
+  <li *ngFor="let comp of competitions" (click)="onSelect(comp)" [class.selected]="comp === selectedComp">
+    <span class="comp-element">
+      <span class="badge">{{comp.id}}</span> {{comp.name}}
+    </span>
+    <button class="delete-button" (click)="deleteComp(comp, $event)">Delete</button>
+  </li>
+</ul>
