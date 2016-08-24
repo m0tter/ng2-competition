@@ -19,7 +19,7 @@ var CompetitionService = (function () {
     CompetitionService.prototype.getCompetitions = function () {
         return this.http.get(this.compUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json(); })
             .catch(this.handleError);
     };
     CompetitionService.prototype.getCompetition = function (id) {

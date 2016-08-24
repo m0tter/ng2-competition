@@ -7,6 +7,7 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/'));
 
 app.get('/api/comps', function(req, res) {
+    
     res.status(200).json([
         {id: 1, name: 'Sumo'},
         {id: 2, name: 'Rescue'}

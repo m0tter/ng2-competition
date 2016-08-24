@@ -19,9 +19,14 @@ var SetupComponent = (function () {
         var _this = this;
         this.compService
             .getCompetitions()
-            .then(function (competitions) { return _this.competitions = competitions; })
+            .then(function (comps) { _this.competitions = comps; console.log(comps); })
             .catch(function (error) { return _this.error = error; });
     };
+    SetupComponent.prototype.onSelect = function (comp) {
+        this.selectedCompetition = comp;
+        this.addingCompetition = false;
+    };
+    SetupComponent.prototype.deleteComp = function (comp, event) { };
     SetupComponent.prototype.ngOnInit = function () {
         this.getCompetitions();
     };

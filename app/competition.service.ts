@@ -14,7 +14,8 @@ export class CompetitionService {
   getCompetitions(): Promise<Competition[]> {
     return this.http.get(this.compUrl)
       .toPromise()
-      .then(response => response.json().data as Competition[])
+      // .then(response => response.json().data as Competition[])
+      .then(response => response.json() as Competition[])
       .catch(this.handleError);
   }
 

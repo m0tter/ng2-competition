@@ -7,3 +7,16 @@
     <button class="delete-button" (click)="deleteComp(comp, $event)">Delete</button>
   </li>
 </ul>
+
+<div class="error" *ngIf="error">{{error}}</div>
+<button (click)="addComp()">Add New Competition</button>
+<div *ngIf="addingCompetition">
+  <my-comp-detail (close)="close($event)"></my-comp-detail>
+</div>
+
+<div *ngIf="selectedCompetition">
+  <h2>
+    {{selectedCompetition.name | uppercase}} is my comp
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

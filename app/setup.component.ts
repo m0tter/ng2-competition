@@ -20,9 +20,16 @@ export class SetupComponent implements OnInit {
   getCompetitions(): void {
     this.compService
         .getCompetitions()
-        .then(competitions => this.competitions = competitions)
+        .then(comps => { this.competitions = comps; })
         .catch(error => this.error = error);
   }
+
+  onSelect(comp: Competition): void {
+    this.selectedCompetition = comp;
+    this.addingCompetition = false;
+  }
+
+  deleteComp(comp: Competition, event: any) { }
 
   ngOnInit(): void { 
     this.getCompetitions();

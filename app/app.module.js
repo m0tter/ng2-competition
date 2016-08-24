@@ -14,11 +14,11 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
-var heroes_component_1 = require('./heroes.component');
+// import { HeroesComponent }      from './heroes.component';
 var dashboard_component_1 = require('./dashboard.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_service_1 = require('./hero.service');
-var hero_search_component_1 = require('./hero-search.component');
+// import { HeroDetailComponent }  from './hero-detail.component';
+// import { HeroService }          from './hero.service';
+// import { HeroSearchComponent }  from './hero-search.component';
 var competition_service_1 = require('./competition.service');
 var setup_component_1 = require('./setup.component');
 var AppModule = (function () {
@@ -34,14 +34,14 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                heroes_component_1.HeroesComponent,
+                //     HeroesComponent,
                 dashboard_component_1.DashboardComponent,
-                hero_detail_component_1.HeroDetailComponent,
-                hero_search_component_1.HeroSearchComponent,
+                //     HeroDetailComponent,
+                //     HeroSearchComponent,
                 setup_component_1.SetupComponent
             ],
             providers: [
-                hero_service_1.HeroService,
+                //     HeroService,
                 competition_service_1.CompetitionService
             ],
             bootstrap: [app_component_1.AppComponent]
