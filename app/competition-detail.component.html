@@ -1,21 +1,32 @@
 <div *ngIf="competition">
-    <h2>Name: {{competition.name}}</h2>
-    <div>
-        <label>id: </label>{{competition.id}}
+    <div class="comp-details">
+        <h2>Competition: {{competition.name}}</h2>
+        <div>
+            <label>id: </label>{{competition.id}}
+        </div>
+        <div class="padbottom-5">
+            <label>name: </label>
+            <input [(ngModel)]="competition.name" placeholder="name" />
+        </div>
+        <button (click)="goBack()">Back</button>
+        <button (click)="save()">Save</button>
     </div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="competition.name" placeholder="name" />
-    </div>
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
-    <div>
+    <div class="schoollist">
+        <h2>Schools</h2>
         <ul class="schools">
-            <li *ngFor="let school of competition.schools">
+            <li *ngFor="let school of competition.schools" (click)="onSelect(school)">
                 <span class="school-element">
                     <span class="badge">{{school.id}}</span> {{school.name}}
                 </span>
+                
                 <button class="delete-button">Delete</button>
+                <ul *ngIf="selectedSchool" class="teams">
+                    <li *ngFor="let team of selectedSchool.teams">
+                        <span class="team-element">
+                            {{team.name}}
+                        </span>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>

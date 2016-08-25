@@ -16,6 +16,7 @@ export class CompetitionDetailComponent implements OnInit {
     @Output() close = new EventEmitter();
     error: any;
     navigated: boolean = false;
+    selectedSchool: School = null;
 
     constructor(
         private compService: CompetitionService,
@@ -41,6 +42,10 @@ export class CompetitionDetailComponent implements OnInit {
     goBack(savedComp: Competition = null): void {
         this.close.emit(savedComp);
         if (this.navigated) { window.history.back(); }
+    }
+
+    onSelect(school: School): void {
+        this.selectedSchool = school;
     }
 
     private errorHandler(error: any): Promise<any> {

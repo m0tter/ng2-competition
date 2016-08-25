@@ -1,3 +1,6 @@
+.comp-details {
+    padding-bottom: 10px;
+}
 .selected {
     background-color: #cfd8dc !important;
     color: white;
@@ -61,4 +64,13 @@ button.delete-button {
     float: right;
     background-color: gray !important;
     color: white;
+}
+.padbottom-5 { padding-bottom: 5px; }
+.padtop-5 { padding-top: 5px; }
+.teams {
+    margin: 0 0 2em 0;
+    list-style: none;
+    padding: 0;
+    width: 10em;
+    padding-left: 5px;
 }

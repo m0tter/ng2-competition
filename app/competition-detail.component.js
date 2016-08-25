@@ -18,6 +18,7 @@ var CompetitionDetailComponent = (function () {
         this.route = route;
         this.close = new core_1.EventEmitter();
         this.navigated = false;
+        this.selectedSchool = null;
     }
     CompetitionDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -41,6 +42,9 @@ var CompetitionDetailComponent = (function () {
         if (this.navigated) {
             window.history.back();
         }
+    };
+    CompetitionDetailComponent.prototype.onSelect = function (school) {
+        this.selectedSchool = school;
     };
     CompetitionDetailComponent.prototype.errorHandler = function (error) {
         console.error('An error occurred in CompetitionDetailComponent ', error);
