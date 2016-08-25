@@ -5,6 +5,7 @@ import { DashboardComponent }   from './dashboard.component';
 // import { HeroesComponent }      from './heroes.component';
 
 import { SetupComponent } from './setup.component';
+import { CompetitionDetailComponent } from './competition-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -19,11 +20,11 @@ const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'detail/:id',
+    component: CompetitionDetailComponent
   }
-//  {
-//    path: 'detail/:id',
-//    component: HeroDetailComponent
-//  },
 //  {
 //    path: 'heroes',
 //    component: HeroesComponent

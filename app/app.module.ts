@@ -9,11 +9,11 @@ import { routing }      from './app.routing';
 // import { HeroesComponent }      from './heroes.component';
 import { DashboardComponent }   from './dashboard.component';
 // import { HeroDetailComponent }  from './hero-detail.component';
-// import { HeroService }          from './hero.service';
 // import { HeroSearchComponent }  from './hero-search.component';
 
-import { CompetitionService }   from './competition.service';
-import { SetupComponent }       from './setup.component';
+import { CompetitionService }           from './competition.service';
+import { SetupComponent }               from './setup.component';
+import { CompetitionDetailComponent }   from './competition-detail.component';
 
 @NgModule({
     imports: [ 
@@ -24,14 +24,13 @@ import { SetupComponent }       from './setup.component';
     ],
     declarations: [ 
         AppComponent,
-   //     HeroesComponent,
+        CompetitionDetailComponent,
         DashboardComponent,
    //     HeroDetailComponent,
    //     HeroSearchComponent,
         SetupComponent
     ],
     providers: [
-   //     HeroService,
         CompetitionService
     ],
     bootstrap: [ AppComponent ]

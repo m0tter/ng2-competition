@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit }  from '@angular/core';
+import { Router }             from '@angular/router';
 
 import { CompetitionService } from './competition.service';
 import { Competition } from './competition';
@@ -15,7 +16,11 @@ export class SetupComponent implements OnInit {
   addingCompetition: boolean = false;
   error: any;
 
-  constructor(private compService: CompetitionService) { }
+  constructor(
+    private compService: CompetitionService,
+    private router: Router) { 
+
+  }
 
   getCompetitions(): void {
     this.compService
@@ -30,6 +35,10 @@ export class SetupComponent implements OnInit {
   }
 
   deleteComp(comp: Competition, event: any) { }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedCompetition.id]);
+  }
 
   ngOnInit(): void { 
     this.getCompetitions();

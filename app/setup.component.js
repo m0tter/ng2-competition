@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var competition_service_1 = require('./competition.service');
 var SetupComponent = (function () {
-    function SetupComponent(compService) {
+    function SetupComponent(compService, router) {
         this.compService = compService;
+        this.router = router;
         this.addingCompetition = false;
     }
     SetupComponent.prototype.getCompetitions = function () {
         var _this = this;
         this.compService
             .getCompetitions()
-            .then(function (comps) { _this.competitions = comps; console.log(comps); })
+            .then(function (comps) { _this.competitions = comps; })
             .catch(function (error) { return _this.error = error; });
     };
     SetupComponent.prototype.onSelect = function (comp) {
@@ -27,6 +29,9 @@ var SetupComponent = (function () {
         this.addingCompetition = false;
     };
     SetupComponent.prototype.deleteComp = function (comp, event) { };
+    SetupComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/detail', this.selectedCompetition.id]);
+    };
     SetupComponent.prototype.ngOnInit = function () {
         this.getCompetitions();
     };
@@ -36,7 +41,7 @@ var SetupComponent = (function () {
             templateUrl: 'app/setup.component.html',
             styleUrls: ['app/setup.component.css']
         }), 
-        __metadata('design:paramtypes', [competition_service_1.CompetitionService])
+        __metadata('design:paramtypes', [competition_service_1.CompetitionService, router_1.Router])
     ], SetupComponent);
     return SetupComponent;
 }());

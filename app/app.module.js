@@ -17,10 +17,10 @@ var app_routing_1 = require('./app.routing');
 // import { HeroesComponent }      from './heroes.component';
 var dashboard_component_1 = require('./dashboard.component');
 // import { HeroDetailComponent }  from './hero-detail.component';
-// import { HeroService }          from './hero.service';
 // import { HeroSearchComponent }  from './hero-search.component';
 var competition_service_1 = require('./competition.service');
 var setup_component_1 = require('./setup.component');
+var competition_detail_component_1 = require('./competition-detail.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,14 +34,13 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                //     HeroesComponent,
+                competition_detail_component_1.CompetitionDetailComponent,
                 dashboard_component_1.DashboardComponent,
                 //     HeroDetailComponent,
                 //     HeroSearchComponent,
                 setup_component_1.SetupComponent
             ],
             providers: [
-                //     HeroService,
                 competition_service_1.CompetitionService
             ],
             bootstrap: [app_component_1.AppComponent]

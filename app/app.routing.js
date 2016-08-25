@@ -4,6 +4,7 @@ var dashboard_component_1 = require('./dashboard.component');
 // import { HeroDetailComponent }  from './hero-detail.component';
 // import { HeroesComponent }      from './heroes.component';
 var setup_component_1 = require('./setup.component');
+var competition_detail_component_1 = require('./competition-detail.component');
 var appRoutes = [
     {
         path: '',
@@ -17,6 +18,10 @@ var appRoutes = [
     {
         path: 'dashboard',
         component: dashboard_component_1.DashboardComponent
+    },
+    {
+        path: 'detail/:id',
+        component: competition_detail_component_1.CompetitionDetailComponent
     }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

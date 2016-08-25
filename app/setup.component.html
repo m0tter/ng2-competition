@@ -11,7 +11,7 @@
 <div class="error" *ngIf="error">{{error}}</div>
 <button (click)="addComp()">Add New Competition</button>
 <div *ngIf="addingCompetition">
-  <my-comp-detail (close)="close($event)"></my-comp-detail>
+  <competition-detail (close)="close($event)"></competition-detail>
 </div>
 
 <div *ngIf="selectedCompetition">

@@ -1,0 +1,22 @@
+<div *ngIf="competition">
+    <h2>Name: {{competition.name}}</h2>
+    <div>
+        <label>id: </label>{{competition.id}}
+    </div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="competition.name" placeholder="name" />
+    </div>
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Save</button>
+    <div>
+        <ul class="schools">
+            <li *ngFor="let school of competition.schools">
+                <span class="school-element">
+                    <span class="badge">{{school.id}}</span> {{school.name}}
+                </span>
+                <button class="delete-button">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div>
