@@ -39,7 +39,15 @@ export class CompetitionDetailComponent implements OnInit {
         });
     }
 
-    save(): void { }
+    save(): void {
+        this.compService
+            .save(this.competition)
+            .then(comp => {
+                this.competition = comp;
+                this.goBack(comp);
+            })
+            .catch(error => this.errorHandler(error));
+     }
 
     goBack(savedComp: Competition = null): void {
         this.close.emit(savedComp);
@@ -52,6 +60,7 @@ export class CompetitionDetailComponent implements OnInit {
 
     addNewSchool(): void {
         let school = new School();
+        school.teams = [];
         school.name = this.newSchool.name;
         school.short = this.newSchool.short;
         this.competition.schools.push(school);

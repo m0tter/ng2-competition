@@ -12,8 +12,8 @@
     <div class="schoollist">
         <h2>Schools</h2>
         <ul class="schools">
-            <li *ngFor="let school of competition.schools" (click)="onSelect(school)">
-                <span class="school-element">
+            <li *ngFor="let school of competition.schools" (click)="onSelect(school)" class="school">
+                <span class="school-details">
                     <span class="badge">{{school.id}}</span> {{school.name}}
                 </span>
                 

@@ -38,7 +38,16 @@ var CompetitionDetailComponent = (function () {
             }
         });
     };
-    CompetitionDetailComponent.prototype.save = function () { };
+    CompetitionDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.compService
+            .save(this.competition)
+            .then(function (comp) {
+            _this.competition = comp;
+            _this.goBack(comp);
+        })
+            .catch(function (error) { return _this.errorHandler(error); });
+    };
     CompetitionDetailComponent.prototype.goBack = function (savedComp) {
         if (savedComp === void 0) { savedComp = null; }
         this.close.emit(savedComp);
@@ -51,6 +60,7 @@ var CompetitionDetailComponent = (function () {
     };
     CompetitionDetailComponent.prototype.addNewSchool = function () {
         var school = new school_1.School();
+        school.teams = [];
         school.name = this.newSchool.name;
         school.short = this.newSchool.short;
         this.competition.schools.push(school);

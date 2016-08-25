@@ -10,19 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+//import { Hero }         from './hero';
 // import { HeroService }  from './hero.service';
 var DashboardComponent = (function () {
+    // heroes: Hero[] = [];
     function DashboardComponent(router) {
         this.router = router;
-        this.heroes = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         //   this.heroService.getHeroes()
         //     .then(heroes => this.heroes = heroes.slice(1, 5));
-    };
-    DashboardComponent.prototype.gotoDetail = function (hero) {
-        var link = ['/detail', hero.id];
-        this.router.navigate(link);
     };
     DashboardComponent = __decorate([
         core_1.Component({

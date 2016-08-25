@@ -7,6 +7,7 @@ var CompetitionSchema = new Schema({
     schools: [{
         id: Number,
         name: String,
+        short: String,
         teams: [{
             id: Number,
             name: String

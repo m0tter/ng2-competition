@@ -1,7 +1,7 @@
 import { Component, OnInit }  from '@angular/core';
 import { Router }             from '@angular/router';
 
-import { Hero }         from './hero';
+//import { Hero }         from './hero';
 // import { HeroService }  from './hero.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { Hero }         from './hero';
   styleUrls: ['app/dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+ // heroes: Hero[] = [];
 
   constructor(
     private router: Router
@@ -22,8 +22,8 @@ export class DashboardComponent implements OnInit {
  //     .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail(hero: Hero): void {
-    let link = ['/detail', hero.id];
-    this.router.navigate(link);
-  }
+  //gotoDetail(hero: Hero): void {
+  //  let link = ['/detail', hero.id];
+  //  this.router.navigate(link);
+  //}
 }
