@@ -8,8 +8,6 @@
             <label>name: </label>
             <input [(ngModel)]="competition.name" placeholder="name" />
         </div>
-        <button (click)="goBack()">Back</button>
-        <button (click)="save()">Save</button>
     </div>
     <div class="schoollist">
         <h2>Schools</h2>
@@ -20,14 +18,25 @@
                 </span>
                 
                 <button class="delete-button">Delete</button>
-                <ul *ngIf="selectedSchool" class="teams">
+                <ul *ngIf="selectedSchool && selectedSchool.short === school.short" class="teams">
                     <li *ngFor="let team of selectedSchool.teams">
                         <span class="team-element">
                             {{team.name}}
                         </span>
+                        <button>Delete</button>
+                    </li>
+                    <li>
+                        <input [(ngModel)]="newTeam.name" placeholder="team" />
+                        <button (click)="addNewTeam()">Add Team</button>
                     </li>
                 </ul>
             </li>
+            <li>
+                <input [(ngModel)]="newSchool.name" placeholder="name" />
+                <input [(ngModel)]="newSchool.short" placeholder="short" size="4" />
+                <button (click)="addNewSchool()">Add</button>
         </ul>
     </div>
+            <button (click)="goBack()">Back</button>
+        <button (click)="save()">Save</button>
 </div>

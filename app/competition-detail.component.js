@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var competition_service_1 = require('./competition.service');
 var competition_1 = require('./competition');
+var school_1 = require('./school');
 var CompetitionDetailComponent = (function () {
     function CompetitionDetailComponent(compService, route) {
         this.compService = compService;
@@ -19,6 +20,8 @@ var CompetitionDetailComponent = (function () {
         this.close = new core_1.EventEmitter();
         this.navigated = false;
         this.selectedSchool = null;
+        this.newSchool = new school_1.School();
+        this.newTeam = new school_1.Team();
     }
     CompetitionDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -45,6 +48,19 @@ var CompetitionDetailComponent = (function () {
     };
     CompetitionDetailComponent.prototype.onSelect = function (school) {
         this.selectedSchool = school;
+    };
+    CompetitionDetailComponent.prototype.addNewSchool = function () {
+        var school = new school_1.School();
+        school.name = this.newSchool.name;
+        school.short = this.newSchool.short;
+        this.competition.schools.push(school);
+        this.newSchool = new school_1.School();
+    };
+    CompetitionDetailComponent.prototype.addNewTeam = function () {
+        var team = new school_1.Team();
+        team.name = this.newTeam.name;
+        this.selectedSchool.teams.push(team);
+        this.newTeam.name = '';
     };
     CompetitionDetailComponent.prototype.errorHandler = function (error) {
         console.error('An error occurred in CompetitionDetailComponent ', error);

@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { CompetitionService } from './competition.service';
 
 import { Competition } from './competition';
-import { School } from './school';
+import { School, Team } from './school';
 
 @Component({
     selector: 'competition-detail',
@@ -17,6 +17,8 @@ export class CompetitionDetailComponent implements OnInit {
     error: any;
     navigated: boolean = false;
     selectedSchool: School = null;
+    newSchool: School = new School();
+    newTeam: Team = new Team();
 
     constructor(
         private compService: CompetitionService,
@@ -46,6 +48,21 @@ export class CompetitionDetailComponent implements OnInit {
 
     onSelect(school: School): void {
         this.selectedSchool = school;
+    }
+
+    addNewSchool(): void {
+        let school = new School();
+        school.name = this.newSchool.name;
+        school.short = this.newSchool.short;
+        this.competition.schools.push(school);
+        this.newSchool = new School();
+    }
+
+    addNewTeam(): void {
+        let team = new Team();
+        team.name = this.newTeam.name;
+        this.selectedSchool.teams.push(team);
+        this.newTeam.name = '';
     }
 
     private errorHandler(error: any): Promise<any> {

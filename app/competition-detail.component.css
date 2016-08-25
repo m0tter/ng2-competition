@@ -5,72 +5,27 @@
     background-color: #cfd8dc !important;
     color: white;
 }
+.schools, .teams {
+    list-style: none;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium
+}
 .schools {
     margin: 0 0 2em 0;
-    list-style: none;
-    padding: 0;
+    background-color: #bec7cb;
     width: 15em;
-}
-.schools li {
-    cursor: pointer;
-    position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: .3em 0;
-    height: 1.6em;
-    border-radius: 4px;
-}
-.schools li:hover {
-    color: #607d8b;
-    background-color: #DDD;
-    left: .1em;
-}
-.schools li.selected:hover {
-    background-color: #bbd8dc !important;
-    color: white;
-}
-.schools .text {
-    position: relative;
-    top: -3px;
-}
-.schools .badge {
-    display: inline-block;
-    font-size: small;
-    color: white;
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #607d8b;
-    line-height: 1em;
-    position: relative;
-    left: -1px;
-    top: -4px;
-    height: 1.8em;
-    margin-left: 0.8em;
     border-radius: 4px 0 0 4px;
 }
-button {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: hand;
-}
-button:hover {
-    background-color: #cfd8dc;
-}
-.error { color: red; }
-button.delete-button {
-    float: right;
-    background-color: gray !important;
-    color: white;
-}
-.padbottom-5 { padding-bottom: 5px; }
-.padtop-5 { padding-top: 5px; }
 .teams {
-    margin: 0 0 2em 0;
-    list-style: none;
-    padding: 0;
-    width: 10em;
     padding-left: 5px;
+    background-color: #cfd8dc;
+    font-size: small;
+}
+.schools li, .teams li {
+    cursor: pointer;
+}
+.schools li {
+    margin-bottom: 5px;
+    padding-left: .3em;
 }

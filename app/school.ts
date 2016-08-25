@@ -3,5 +3,6 @@ export class Team {
 }
 export class School {
   name: string;
+  short: string;
   teams: Team[];
 }
