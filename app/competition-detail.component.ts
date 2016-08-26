@@ -74,6 +74,10 @@ export class CompetitionDetailComponent implements OnInit {
         this.newTeam.name = '';
     }
 
+    deleteTeam(team: Team): void {
+        this.selectedSchool.teams.splice(this.selectedSchool.teams.indexOf(team), 1);
+    }
+
     private errorHandler(error: any): Promise<any> {
         console.error('An error occurred in CompetitionDetailComponent ', error);
         return Promise.reject(error.message || error);

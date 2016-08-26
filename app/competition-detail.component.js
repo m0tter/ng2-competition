@@ -72,6 +72,9 @@ var CompetitionDetailComponent = (function () {
         this.selectedSchool.teams.push(team);
         this.newTeam.name = '';
     };
+    CompetitionDetailComponent.prototype.deleteTeam = function (team) {
+        this.selectedSchool.teams.splice(this.selectedSchool.teams.indexOf(team), 1);
+    };
     CompetitionDetailComponent.prototype.errorHandler = function (error) {
         console.error('An error occurred in CompetitionDetailComponent ', error);
         return Promise.reject(error.message || error);

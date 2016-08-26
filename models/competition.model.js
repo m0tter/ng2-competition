@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var CompetitionSchema = new Schema({
     id: Number,
     name: String,
+    type: String,
     schools: [{
         id: Number,
         name: String,

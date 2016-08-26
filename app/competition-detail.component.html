@@ -19,11 +19,15 @@
                 
                 <button class="delete-button">Delete</button>
                 <ul *ngIf="selectedSchool && selectedSchool.short === school.short" class="teams">
+                    <span class="school-name-edit">
+                        <input [(ngModel)]="selectedSchool.name" size="10" />
+                        <input [(ngModel)]="selectedSchool.short" size="4"/>
+                    </span>
                     <li *ngFor="let team of selectedSchool.teams">
                         <span class="team-element">
-                            {{team.name}}
+                            <input [(ngModel)]="team.name" />
                         </span>
-                        <button>Delete</button>
+                        <button (click)="deleteTeam(team)">Delete</button>
                     </li>
                     <li>
                         <input [(ngModel)]="newTeam.name" placeholder="team" />
